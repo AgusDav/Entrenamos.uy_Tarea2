@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width", initial-scale=1,shrink-to-fit=no">
 	<%@include file="header.jsp" %>
-	<title>Pagina de inicio</title>
+	<title>Entrenamos.uy</title>
 </head>
 <body>
 	<h1>devolveme la plata</h1>
