@@ -9,7 +9,8 @@
 	<title>Entrenamos.uy</title>
 </head>
 <body>
-	<h1>devolveme la plata</h1>
+	<h1>Bienvenido a Entrenamos.uy</h1>
+	<img src="imagenes_iconos/bokita.jpeg" class="img-fluid" alt="">
 	<%@include file="footer.jsp" %>
 </body>
 </html>
