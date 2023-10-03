@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import excepciones.UsuarioRepetidoException;
 import interfaces.Fabrica;
 import interfaces.IControlador;
 
@@ -27,9 +28,9 @@ public class AgregarUsuario extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nickname = request.getParameter("nickname");
 		String email = request.getParameter("email");
-		String nombre = request.getParameter("cedSocio");
-		String apellido = request.getParameter("cedSocio");
-		String fecNac = request.getParameter("fecha");
+		String nombre = request.getParameter("nombre");
+		String apellido = request.getParameter("apellido");
+		String fecha = request.getParameter("fecNac");
 		String tipo = request.getParameter("tipo");
 		String institucion = null;
 		if ("Profesor".equals(tipo)) {
@@ -40,9 +41,13 @@ public class AgregarUsuario extends HttpServlet {
 
 		Fabrica fabrica = Fabrica.getInstancia();
 		IControlador icon = fabrica.getIControlador();
-		//icon.agregarUsuario(icon.obtenerUsuario(nickname), institucion);
+		try {
+			icon.agregarUsuario(icon.obtenerUsuario(nickname), institucion);
+		} catch (UsuarioRepetidoException e) {
+			throw new RuntimeException(e);
+		}
 		RequestDispatcher rd;
-		//request.setAttribute("mensaje", "Se ha ingresado correctamente al socio " + nombre + " de CI " + cedula + " en el sistema.");
+		request.setAttribute("mensaje", "Se ha ingresado correctamente al socio " + nombre + " de nickname " + nickname + " en el sistema.");
 		rd = request.getRequestDispatcher("/notificacion.jsp");
 		rd.forward(request, response);
 	}
