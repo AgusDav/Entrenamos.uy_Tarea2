@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<form action="AgregarSocio" method="post">
+<form action="AgregarUsuario" method="post">
     <div class="form-group">
         <label for="inputNickname">Nickname</label>
         <input type="text"
@@ -21,6 +21,12 @@
                 placeholder="Nickname de usuario"
                 value=""
         >
+    </div>
+    <div class="form-group">
+        <label for="inputPassword">Password</label> <input type="text" name="password"
+                                                      class="form-control" id="inputPasword"
+                                                      placeholder="Password de usuario">
+    </div>
     </div>
     <div class="form-group">
         <label for="inputEmail">E-mail</label> <input type="text" name="email"
@@ -60,6 +66,11 @@
             <label for="inputBio">Biografia</label> <input type="text" name="biografia"
                                                               class="form-control" id="inputBio"
                                                               placeholder="Biografia de profesor">
+        </div>
+        <div class="form-group">
+            <label for="inputWeb">Web</label> <input type="text" name="web"
+                                                              class="form-control" id="inputWeb"
+                                                              placeholder="Web del profesor">
         </div>
         <div class="form-group">
             <label for="inputInst">Institucion</label> <input type="text" name="institucion"
