@@ -1,9 +1,0 @@
-127.0.0.1 - - [05/Oct/2023:20:11:18 -0300] "GET /tomcatConfiguration HTTP/1.1" 302 -
-127.0.0.1 - - [05/Oct/2023:20:11:18 -0300] "GET /tomcatConfiguration HTTP/1.1" 302 -
-127.0.0.1 - - [05/Oct/2023:20:11:23 -0300] "GET /tomcatConfiguration/ HTTP/1.1" 200 3491
-127.0.0.1 - - [05/Oct/2023:20:11:23 -0300] "GET /tomcatConfiguration/ HTTP/1.1" 200 3491
-127.0.0.1 - - [05/Oct/2023:20:11:23 -0300] "GET /tomcatConfiguration/imagenes_iconos/bokita.jpeg HTTP/1.1" 200 324923
-127.0.0.1 - - [05/Oct/2023:20:11:24 -0300] "GET /tomcatConfiguration/imagenes_iconos/bokita.jpeg HTTP/1.1" 200 324923
-127.0.0.1 - - [05/Oct/2023:20:11:24 -0300] "GET /favicon.ico HTTP/1.1" 404 683
-127.0.0.1 - - [05/Oct/2023:20:11:30 -0300] "GET /tomcatConfiguration/ConsultaActividadDeportiva.jsp HTTP/1.1" 200 3416
-127.0.0.1 - - [05/Oct/2023:20:11:35 -0300] "GET /tomcatConfiguration/AgregarUsuario.jsp HTTP/1.1" 200 7432
