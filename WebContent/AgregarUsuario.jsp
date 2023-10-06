@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<form action="AgregarUsuario" method="post">
+<form action="/src/servlets/AgregarUsuarioServ.java" method="post">
     <div class="form-group">
         <label for="inputNickname">Nickname</label>
         <input type="text"
@@ -19,32 +19,48 @@
                 id="inputNickname"
                 aria-describedby="emailHelp"
                 placeholder="Nickname de usuario"
-                value=""
-        >
+                value="">
     </div>
+
     <div class="form-group">
-        <label for="inputPassword">Password</label> <input type="text" name="password"
-                                                      class="form-control" id="inputPasword"
-                                                      placeholder="Password de usuario">
+        <label for="inputEmail">E-mail</label>
+        <input type="text"
+               name="email"
+               class="form-control"
+               id="inputEmail"
+               placeholder="E-mail de usuario"
+               value="">
     </div>
-    </div>
+
     <div class="form-group">
-        <label for="inputEmail">E-mail</label> <input type="text" name="email"
-                                                                 class="form-control" id="inputEmail"
-                                                                 placeholder="E-mail de usuario">
+        <label for="inputNombre">Nombre</label>
+        <input type="text"
+               name="nombre"
+               class="form-control"
+               id="inputNombre"
+               placeholder="Nombre de usuario"
+               value="">
     </div>
-    </div>
+
     <div class="form-group">
-        <label for="inputNombre">Nombre</label> <input type="text" name="nombre"
-                                                                 class="form-control" id="inputNombre"
-                                                                 placeholder="Nombre de usuario">
+        <label for="inputApellido">Apellido</label>
+        <input type="text"
+               name="nombre"
+               class="form-control"
+               id="inputApellido"
+               placeholder="Apellido de usuario"
+               value="">
     </div>
-    </div>
+
     <div class="form-group">
-        <label for="inputFechaNacim">Fecha de nacimiento</label> <input type="date" name="fecNac"
-                                                                              class="form-control" id="inputFechaNacim"
-                                                                              placeholder="Fecha de nacimiento de usuario">
+        <label for="inputFechaNacim">Fecha de nacimiento</label>
+        <input type="date"
+               name="fecNac"
+               class="form-control"
+               id="inputFechaNacim"
+               placeholder="Fecha de nacimiento de usuario">
     </div>
+
     <div class="form-group">
         <label for="tipoUsuario">Tipo de Usuario</label>
         <select name="tipoUsuario" id="tipoUsuario" class="form-control">
@@ -54,30 +70,54 @@
         </select>
     </div>
 
+    <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="text"
+               name="password"
+               class="form-control"
+               id="inputPassword"
+               placeholder="Password de usuario"
+               value="">
+    </div>
+
+    <!-- Campos exclusivos de profesor -->
     <div id="camposProfesor" style="display: none;">
-        <!-- Aquí puedes agregar los campos adicionales para el profesor -->
+
         <div class="form-group">
-            <label for="inputDesc">Descripcion</label> <input type="text" name="descripcion"
-                                                           class="form-control" id="inputDesc"
-                                                           placeholder="Descripcion de profesor"
-                                                           value="">
+            <label for="inputBio">Biografia</label>
+            <input type="text"
+                   name="biografia"
+                   class="form-control"
+                   id="inputBio"
+                   placeholder="Biografia de profesor">
         </div>
+
         <div class="form-group">
-            <label for="inputBio">Biografia</label> <input type="text" name="biografia"
-                                                              class="form-control" id="inputBio"
-                                                              placeholder="Biografia de profesor">
+            <label for="inputWeb">Web</label>
+            <input type="text"
+                   name="web"
+                   class="form-control"
+                   id="inputWeb"
+                   placeholder="Web del profesor">
         </div>
+
         <div class="form-group">
-            <label for="inputWeb">Web</label> <input type="text" name="web"
-                                                              class="form-control" id="inputWeb"
-                                                              placeholder="Web del profesor">
+            <label for="inputInst">Institucion</label>
+            <input type="text"
+                   name="institucion"
+                   class="form-control" id="inputInst"
+                   placeholder="implementar instituciones disponibles">
         </div>
+
         <div class="form-group">
-            <label for="inputInst">Institucion</label> <input type="text" name="institucion"
-                                                              class="form-control" id="inputInst"
-                                                              placeholder="implementar instituciones disponibles">
+            <label for="inputDesc">Descripcion</label>
+            <input type="text"
+                   name="descripcion"
+                   class="form-control"
+                   id="inputDesc"
+                   placeholder="Descripcion de profesor"
+                   value="">
         </div>
-        <!-- Agregar más campos según sea necesario para el profesor -->
     </div>
 
 
