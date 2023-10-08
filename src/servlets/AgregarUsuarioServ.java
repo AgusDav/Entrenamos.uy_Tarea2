@@ -3,6 +3,8 @@ package servlets;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
@@ -46,6 +48,7 @@ public class AgregarUsuarioServ extends HttpServlet {
 		} catch (ParseException e) {
 			throw new RuntimeException(e);
 		}
+		LocalDate fecNacLocalDate = fecNacDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 		DtUsuario dtU = null;
 		Fabrica fabrica = Fabrica.getInstancia();
 		IControlador icon = fabrica.getIControlador();
@@ -56,10 +59,10 @@ public class AgregarUsuarioServ extends HttpServlet {
 				String desc = request.getParameter("descripcion");
 				String institucion = request.getParameter("institucion");
 				String web = request.getParameter("web");
-				dtU = new DtProfesor(nickname, nombre, apellido, email, fecNacDate, desc, bio, web);
+				dtU = new DtProfesor(nickname, nombre, apellido, email, fecNacLocalDate, desc, bio, web);
 				icon.agregarUsuario(dtU, inst);
 			}else if(tipo.equals("socio")){
-				dtU = new DtSocio(nickname, nombre, apellido, email, fecNacDate);
+				dtU = new DtSocio(nickname, nombre, apellido, email, fecNacLocalDate);
 				icon.agregarUsuario(dtU, "");
 			}
 		} catch (UsuarioRepetidoException e) {
