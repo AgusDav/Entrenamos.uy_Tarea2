@@ -1,23 +1,21 @@
 package servlets;
 
-
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import excepciones.InstitucionDeportivaRepetidaException;
-import com.uy.Entrenamos.Fabrica;
-
-import com.uy.Entrenamos.IControlador;
+import interfaces.Fabrica;
+import interfaces.IControlador;
 
 @WebServlet("/AgregarInstitucionServ")
 public class AgregarInstitucionServ extends HttpServlet {
@@ -37,7 +35,11 @@ public class AgregarInstitucionServ extends HttpServlet {
         String url = request.getParameter("url");
         Fabrica fabrica = Fabrica.getInstancia();
         IControlador icon = fabrica.getIControlador();
-        icon.altaInstitucion(nombre,descripcion,url);
+        try {
+            icon.altaInstitucion(nombre,descripcion,url);
+        } catch (InstitucionDeportivaRepetidaException e) {
+            throw new RuntimeException(e);
+        }
         RequestDispatcher rd;
         request.setAttribute("mensaje", "Se ha ingresado correctamente la institucion deportiva " + nombre + " en el sistema.");
         rd = request.getRequestDispatcher("/index.jsp");
