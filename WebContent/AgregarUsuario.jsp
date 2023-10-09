@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<form action="/src/servlets/AgregarUsuarioServ.java" method="post">
+<form action="AgregarUsuario" method="post">
     <div class="form-group">
         <label for="inputNickname">Nickname</label>
         <input type="text"
@@ -65,8 +65,8 @@
         <label for="tipoUsuario">Tipo de Usuario</label>
         <select name="tipoUsuario" id="tipoUsuario" class="form-control">
             <option value=""selected disabled>Selecciona una opción</option>
-            <option value="socio">Socio</option>
-            <option value="profesor">Profesor</option>
+            <option value="S">Socio</option>
+            <option value="P">Profesor</option>
         </select>
     </div>
 
@@ -126,7 +126,7 @@
     <script>
         document.getElementById("tipoUsuario").addEventListener("change", function () {
             var camposProfesor = document.getElementById("camposProfesor");
-            if (this.value === "profesor") {
+            if (this.value === "P") {
                 camposProfesor.style.display = "block"; // Mostrar campos adicionales
             } else {
                 camposProfesor.style.display = "none"; // Ocultar campos adicionales
@@ -141,7 +141,7 @@
         });
     </script>
 
-    <button type="submit" class="btn btn-primary">Agregar Socio</button>
+    <button type="submit" class="btn btn-primary">Agregar Usuario</button>
 </form>
 
 <%@include file="footer.jsp" %>
