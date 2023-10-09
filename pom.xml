@@ -13,8 +13,7 @@
   </properties>
   
  <!-- comando para incluir Entrenamos.uy.jar 
-mvn install:install-file -Dfile=Entrenamos.uy.jar -DgroupId=pom.Entrenamos -DartifactId=Entrenamos -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -->
-  
+mvn install:install-file -Dfile=Entrenamos.uy.jar -DgroupId=com.uy.Entrenamos -DartifactId=Entrenamos.uy -Dversion=0.0.1-SNAPSHOT -Dpackaging=jar -DgeneratePom=true -->
   
   <dependencies>
   	<dependency>
@@ -223,11 +222,18 @@ mvn install:install-file -Dfile=Entrenamos.uy.jar -DgroupId=pom.Entrenamos -Dart
       <artifactId>tomcat-catalina-ant</artifactId>
       <version>10.1.13</version>
     </dependency>
-      <dependency>
-          <groupId>javax.servlet</groupId>
-          <artifactId>javax.servlet-api</artifactId>
-          <version>3.1.0</version>
-      </dependency>
+    <!--<dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>-->
+    <dependency>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-api</artifactId>
+      <version>9.1.0</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
